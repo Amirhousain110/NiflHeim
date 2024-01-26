@@ -72,7 +72,7 @@ autocmd("FileType", {
   end,
 })
 
--- reload some chadrc options on-save
+-- reload some niflrc options on-save
 autocmd("BufWritePost", {
   pattern = vim.tbl_map(function(path)
     return vim.fs.normalize(vim.loop.fs_realpath(path))
@@ -86,7 +86,7 @@ autocmd("BufWritePost", {
 
     require("plenary.reload").reload_module "base46"
     require("plenary.reload").reload_module(module)
-    require("plenary.reload").reload_module "custom.chadrc"
+    require("plenary.reload").reload_module "custom.niflrc"
 
     config = require("core.utils").load_config()
 
