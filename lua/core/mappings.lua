@@ -16,6 +16,7 @@ M.general = {
   },
 
   n = {
+    ["<C-c>"] = {'<cmd> "+y <CR>', 'Copy selected text to clipboard'},
     ["<F5>"] = {"<cmd> LiveServerStart %", "Start live-server"},
     ["<F6>"] = {"<cmd> LiveServerStop", "Stop Liver-server"},
     --enable trancparency
@@ -35,8 +36,8 @@ M.general = {
     -- save
     ["<C-s>"] = { "<cmd> w <CR>", "Save file" },
 
-    -- Copy all
-    ["<C-c>"] = { "<cmd> %y+ <CR>", "Copy whole file" },
+  -- Copy all
+    ["<C-a>"] = { "<cmd> %y+ <CR>", "Copy whole file" },
 
     -- line numbers
     ["<leader>n"] = { "<cmd> set nu! <CR>", "Toggle line number" },

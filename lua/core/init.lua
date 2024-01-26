@@ -11,7 +11,8 @@ g.transparency = config.ui.transparency
 -------------------------------------- options ------------------------------------------
 opt.laststatus = 3 -- global statusline
 opt.showmode = false
-
+opt.backup = false
+opt.swapfile = false
 opt.clipboard = "unnamedplus"
 opt.cursorline = true
 opt.guicursor = 'n-v-c-sm:block'
@@ -100,8 +101,7 @@ autocmd("BufWritePost", {
     if config.ui.tabufline.enabled then
       require("plenary.reload").reload_module "nvchad.tabufline.modules"
       vim.opt.tabline = "%!v:lua.require('nvchad.tabufline.modules').run()"
-    end
-
+    end 
     require("base46").load_all_highlights()
     -- vim.cmd("redraw!")
   end,
