@@ -16,16 +16,15 @@ M.general = {
   },
 
   n = {
-        --enable trancparency
+    ["<F5>"] = {"<cmd> LiveServerStart %", "Start live-server"},
+    ["<F6>"] = {"<cmd> LiveServerStop", "Stop Liver-server"},
+    --enable trancparency
     ["<leader>tt"] = {
       function()
         require("base46").toggle_transparency()
       end,
       "Toggle transparency",
     },
-
-    ["<F5>"] = {"<cmd> LiveServerStart <CR>"},
-    ["<F6>"] = {"<cmd> LiveServerStop <CR>"},
     ["<Esc>"] = { "<cmd> noh <CR>", "Clear highlights" },
     -- switch between windows
     ["<C-h>"] = { "<C-w>h", "Window left" },
@@ -38,7 +37,8 @@ M.general = {
 
     -- Copy all
     ["<C-c>"] = { "<cmd> %y+ <CR>", "Copy whole file" },
-    -- line numbersd
+
+    -- line numbers
     ["<leader>n"] = { "<cmd> set nu! <CR>", "Toggle line number" },
     ["<leader>rn"] = { "<cmd> set rnu! <CR>", "Toggle relative number" },
 
@@ -72,7 +72,6 @@ M.general = {
     ["<Down>"] = { 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', "Move down", opts = { expr = true } },
     ["<"] = { "<gv", "Indent line" },
     [">"] = { ">gv", "Indent line" },
-    ["<CS-c>"] = {'<cmd> "+y <CR>'},
   },
 
   x = {

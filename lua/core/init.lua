@@ -11,11 +11,10 @@ g.transparency = config.ui.transparency
 -------------------------------------- options ------------------------------------------
 opt.laststatus = 3 -- global statusline
 opt.showmode = false
-opt.guicursor = 'n-v-c-i:block'
+
 opt.clipboard = "unnamedplus"
 opt.cursorline = true
-opt.backup = false
-opt.swapfile = false
+opt.guicursor = 'n-v-c-sm:block'
 -- Indenting
 opt.expandtab = true
 opt.shiftwidth = 2

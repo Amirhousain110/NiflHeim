@@ -5,7 +5,6 @@ local plugins = {
 
   -- Override plugin definition options
 
-  "EtiamNullam/deferred-clipboard.nvim",
   {
     "neovim/nvim-lspconfig",
     config = function()

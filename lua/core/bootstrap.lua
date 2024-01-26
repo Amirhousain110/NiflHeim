@@ -47,10 +47,10 @@ M.gen_chadrc_template = function()
       shell_call { "git", "clone", "--depth", "1", "https://github.com/NvChad/example_config", path }
       fn.delete(path .. "/.git", "rf")
     else
-      -- use very minimal chadrc
+      -- use very minimal 
       fn.mkdir(path, "p")
 
-      local file = io.open(path .. "/niflrc.lua", "w")
+      local file = io.open(path .. "/chadrc.lua", "w")
       if file then
         file:write "---@type ChadrcConfig\nlocal M = {}\n\nM.ui = { theme = 'onedark' }\n\nreturn M"
         file:close()

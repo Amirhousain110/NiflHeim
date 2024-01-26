@@ -2,24 +2,12 @@
 -- List of all default plugins & their definitions
 local default_plugins = {
 
-  {
-    'MunifTanjim/prettier.nvim', 
-  },
-  {
-    'barrett-ruth/live-server.nvim',
-    build = 'yarn global add live-server',
-    config = true,
-    init = function(opts)
-      require('live-server').setup(opts)
-    end,
-  },
   "nvim-lua/plenary.nvim",
-  {
-    "EtiamNullam/deferred-clipboard.nvim",
-    lazy = true,
-    init = function()
-      require('deferred-clipboard').setup {fallback = 'unnamedplus'}
-    end,
+    {
+     'barrett-ruth/live-server.nvim',
+      build = 'pnpm add -g live-server',
+      cmd = { 'LiveServerStart', 'LiveServerStop' },
+      config = true
   },
   {
     "NvChad/base46",
