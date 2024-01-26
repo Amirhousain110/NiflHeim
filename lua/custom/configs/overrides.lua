@@ -33,6 +33,9 @@ M.mason = {
     "typescript-language-server",
     "deno",
     "prettier",
+    "pyright",
+    "intelephense",
+    "js-debug-adapter",
 
     -- c/cpp stuff
     "clangd",
