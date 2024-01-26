@@ -16,7 +16,7 @@ M.general = {
   },
 
   n = {
-    ["<C-c>"] = {'<cmd> "+y <CR>', 'Copy selected text to clipboard'},
+    ["C-c"] = {'"+y', 'Copy selected text to clipboard'},
     ["<F5>"] = {"<cmd> LiveServerStart %", "Start live-server"},
     ["<F6>"] = {"<cmd> LiveServerStop", "Stop Liver-server"},
     --enable trancparency
@@ -69,6 +69,7 @@ M.general = {
   },
 
   v = {
+    ["<C-c>"] = { '"+y', 'Copy selected text to clipboard' },
     ["<Up>"] = { 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', "Move up", opts = { expr = true } },
     ["<Down>"] = { 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', "Move down", opts = { expr = true } },
     ["<"] = { "<gv", "Indent line" },
@@ -76,8 +77,8 @@ M.general = {
   },
 
   x = {
-    ["j"] = { 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', "Move down", opts = { expr = true } },
-    ["k"] = { 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', "Move up", opts = { expr = true } },
+    ["j"] = { 'v:count || mode(2)[0:1] == "no" ? "j" : "gj"', "Move down", opts = { expr = true } },
+    ["k"] = { 'v:count || mode(2)[0:1] == "no" ? "k" : "gk"', "Move up", opts = { expr = true } },
     -- Don't copy the replaced text after pasting in visual mode
     -- https://vim.fandom.com/wiki/Replace_a_word_with_yanked_text#Alternative_mapping_for_paste
     ["p"] = { 'p:let @+=@0<CR>:let @"=@0<CR>', "Dont copy replaced text", opts = { silent = true } },
