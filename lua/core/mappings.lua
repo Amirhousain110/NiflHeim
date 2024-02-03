@@ -17,8 +17,8 @@ M.general = {
 
   n = {
     ["C-c"] = {'"+y', 'Copy selected text to clipboard'},
-    ["<F5>"] = {"<cmd> LiveServerStart %", "Start live-server"},
-    ["<F6>"] = {"<cmd> LiveServerStop", "Stop Liver-server"},
+    ["<F5>"] = {"<cmd> LiveServerStart <CR>", "Start live-server"},
+    ["<F6>"] = {"<cmd> LiveServerStop <CR>", "Stop Liver-server"},
     --enable trancparency
     ["<leader>tt"] = {
       function()
