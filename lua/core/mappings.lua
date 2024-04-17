@@ -3,7 +3,9 @@
 local M = {}
 
 M.general = {
-  i = {
+  i = { 
+    ["<C-s>"] = { "<cmd> w <CR>", "Save file" },
+    ["<F2>"] = { "<cmd> wq <CR>", "Save and exit file" },
     -- go to  beginning and end
     ["<C-b>"] = { "<ESC>^i", "Beginning of line" },
     ["<C-e>"] = { "<End>", "End of line" },
@@ -17,6 +19,8 @@ M.general = {
 
   n = {
     ["C-c"] = {'"+y', 'Copy selected text to clipboard'},
+    ["<F2>"] = { "<cmd> wq <CR>", "Save and exit file" },
+    ["<F3>"] = { "<cmd> q <CR>", "Save and exit file" },
     ["<F5>"] = {"<cmd> LiveServerStart <CR>", "Start live-server"},
     ["<F6>"] = {"<cmd> LiveServerStop <CR>", "Stop Liver-server"},
     --enable trancparency

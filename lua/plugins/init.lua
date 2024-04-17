@@ -5,7 +5,7 @@ local default_plugins = {
   "nvim-lua/plenary.nvim",
     {
      'barrett-ruth/live-server.nvim',
-      build = 'pnpm add -g live-server',
+      build = 'pnpm add live-server',
       cmd = { 'LiveServerStart', 'LiveServerStop' },
       config = true
   },
