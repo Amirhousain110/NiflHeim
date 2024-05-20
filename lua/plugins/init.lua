@@ -48,7 +48,7 @@ return {
         "html-lsp",
         "css-lsp",
         "prettier",
-        "pryight",
+        "pyright",
         "intelephense",
         "clangd",
         "shfmt",
