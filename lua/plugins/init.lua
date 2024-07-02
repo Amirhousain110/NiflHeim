@@ -15,6 +15,13 @@ return {
     end,
   },
   {
+    "okuuva/auto-save.nvim",
+    cmd = "ASToggle",
+    event = { "InsertLeave", "TextChanged" },
+    opts = {},
+  },
+
+  {
     "CRAG666/code_runner.nvim",
     config = true,
     init = function()
@@ -24,7 +31,7 @@ return {
 
   {
     "stevearc/conform.nvim",
-    event = "BufWritePre", -- uncomment for format on save
+    event = "BufWritePre",
     config = function()
       require "configs.conform"
     end,
