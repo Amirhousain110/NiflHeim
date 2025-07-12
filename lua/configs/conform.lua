@@ -6,6 +6,7 @@ local options = {
     javascript = { "prettier" },
     c = { "clangd-format " },
     sh = { "shfmt" },
+    rust = { "rustfmt" },
   },
 
   format_on_save = {
