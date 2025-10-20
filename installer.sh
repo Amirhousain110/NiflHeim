@@ -61,7 +61,10 @@ if [[ $choice1 == "y" || $choice1 == "Y" || $choice1 == "" ]]; then
 	if [[ $depChoice == "y" || $depChoice == "Y" || $depChoice == "" ]]; then
 		echo "Installing dependencies..."
 		pkg_install "fzf lazygit ripgrep fd tree-sitter tree-sitter-c tree-sitter-cli neovim git curl nodejs gcc"
-
+		if [ $? -ne 0 ]; then
+			echo -e "${RED}${cmd} failed${NC}"
+			exit 1
+		fi
 	elif [[ $depChoice == "n" || $depChoice == "N" ]]; then
 		echo "Skipping dependency installation..."
 
@@ -85,7 +88,10 @@ if [[ $choice1 == "y" || $choice1 == "Y" || $choice1 == "" ]]; then
 			rm -rf $HOME/.local/state/nvim
 			rm -rf $HOME/.cache/nvim
 			git clone $dfile $conf
-
+			if [ $? -ne 0 ]; then
+				echo -e "${RED}Git clone failed!${NC}"
+				exit 1
+			fi
 		elif [[ $choice2 == "n" || $choice2 == "N" ]]; then
 			echo "Skipping backup..."
 
@@ -94,6 +100,11 @@ if [[ $choice1 == "y" || $choice1 == "Y" || $choice1 == "" ]]; then
 			rm -rf $HOME/.local/state/nvim
 			rm -rf $HOME/.cache/nvim
 			git clone $dfile $conf
+
+			if [ $? -ne 0 ]; then
+				echo -e "${RED}Git clone failed!${NC}"
+				exit 1
+			fi
 
 		elif [[ $choice2 == "c" || $choice2 == "C" ]]; then
 			echo -e "${RED}Installation cancelled${NC}"
@@ -105,6 +116,11 @@ if [[ $choice1 == "y" || $choice1 == "Y" || $choice1 == "" ]]; then
 	else
 
 		git clone $dfile $conf
+
+		if [ $? -ne 0 ]; then
+			echo -e "${RED}Git clone failed!${NC}"
+			exit 1
+		fi
 	fi
 	echo -e "${GREEN}NiflHeim installed successfully!${NC}"
 
@@ -117,6 +133,11 @@ if [[ $choice1 == "y" || $choice1 == "Y" || $choice1 == "" ]]; then
 		rm -rf /root/.local/state/nvim
 		rm -rf /root/.cache/nvim
 		git clone $dfile /root/.config/nvim
+
+		if [ $? -ne 0 ]; then
+			echo -e "${RED}Git clone failed!${NC}"
+			exit 1
+		fi
 		echo -e "${GREEN}NiflHeim installed successfully for root user!${NC}"
 
 	else
