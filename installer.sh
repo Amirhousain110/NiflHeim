@@ -42,6 +42,7 @@ pkg_install() {
 }
 
 echo -e "${CYAN}"
+echo -e "${prefix}___________________________________________________________"
 echo -e "${prefix}███╗   ██╗██╗███████╗██╗     ██╗  ██╗███████╗██╗███╗   ███╗"
 echo -e "${prefix}████╗  ██║██║██╔════╝██║     ██║  ██║██╔════╝██║████╗ ████║"
 echo -e "${prefix}██╔██╗ ██║██║█████╗  ██║     ███████║█████╗  ██║██╔████╔██║"
@@ -69,7 +70,7 @@ if [[ $choice1 == "y" || $choice1 == "Y" || $choice1 == "" ]]; then
 		exit 1
 	fi
 
-	if [[ -f $conf ]]; then
+	if [ -f $conf ]; then
 
 		read -p "Another config detect. Do you whant to back up your current Neovim configuration? (Y/n/c[ancel install]):" choice2
 		if [[ $choice2 == "y" || $choice2 == "Y" || $choice2 == "" ]]; then
